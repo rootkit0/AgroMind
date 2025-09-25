@@ -1,0 +1,10 @@
+<mat-card class="verify-email-card">
+    <mat-card-content>
+        <h2 class="verify-email-title">Verify email</h2>
+        <mat-list class="verify-email-list" *ngIf="userData as User">
+            <h3>We have sent a confirmation email to your email address. <strong>{{userData.email}}</strong>.</h3>
+            <h3>Please check your inbox and click the link to verify your account.</h3>
+            <button mat-raised-button color="primary" class="verify-email-button">Resend mail</button>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

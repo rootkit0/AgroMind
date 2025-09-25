@@ -1,0 +1,28 @@
+<mat-card class="signup-card">
+    <mat-card-content>
+        <h2 class="signup-title">Sign up</h2>
+        <mat-list class="signup-list">
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input [(ngModel)]="username" matInput required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input [(ngModel)]="password" (paste)="(false)" matInput required [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Repeat password</mat-label>
+                <input [(ngModel)]="repeatPassword" (paste)="(false)" matInput required [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div>
+                <button mat-raised-button color="primary" class="signup-button" (click)="signup()">Sign up</button>
+            </div>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
