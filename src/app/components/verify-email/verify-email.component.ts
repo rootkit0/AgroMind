@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
@@ -11,7 +11,7 @@ import { AuthService } from '../../services/auth.service';
 
 @Component({
     selector: 'app-verify-email',
-    imports: [CommonModule, MatCardModule, MatListModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
+    imports: [MatCardModule, MatListModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
     templateUrl: './verify-email.component.html',
     styleUrl: './verify-email.component.scss'
 })
