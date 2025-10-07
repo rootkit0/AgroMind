@@ -1,0 +1,17 @@
+<mat-card *ngIf="sensor">
+  <mat-card-title>{{ sensor.name }}</mat-card-title>
+  <mat-card-subtitle>{{ sensor.type }}</mat-card-subtitle>
+
+  <mat-card-content>
+    <p><strong>Ubicación:</strong> {{ sensor.location || 'No definida' }}</p>
+    <p><strong>Última lectura:</strong> {{ sensor.lastReading }}</p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-stroked-button color="primary" routerLink="/agrosense/sensor/{{sensor.id}}/history">
+      Ver histórico
+    </button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>

@@ -1,0 +1,7 @@
+<mat-list>
+  <mat-list-item *ngFor="let c of sessions" (click)="openChat(c.id!)">
+    <mat-icon matListIcon>chat</mat-icon>
+    <h4 matLine>{{ c.title || 'Chat sin título' }}</h4>
+    <p matLine>{{ c.createdAt | date:'short' }}</p>
+  </mat-list-item>
+</mat-list>

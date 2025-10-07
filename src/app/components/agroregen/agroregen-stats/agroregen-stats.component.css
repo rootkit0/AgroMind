@@ -1,0 +1,14 @@
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+mat-card {
+  text-align: center;
+  padding: 1.5rem;
+}
+mat-icon {
+  font-size: 36px;
+  color: #4caf50;
+}

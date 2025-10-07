@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Configuración de alertas</mat-card-title>
+  <form [formGroup]="alertForm">
+    <mat-form-field>
+      <mat-label>Parámetro</mat-label>
+      <input matInput formControlName="parameter" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Umbral</mat-label>
+      <input matInput type="number" formControlName="threshold" />
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="notifyEmail">Notificar por email</mat-slide-toggle>
+    <mat-slide-toggle formControlName="notifySMS">Notificar por SMS</mat-slide-toggle>
+
+    <button mat-raised-button color="primary" (click)="saveAlert()">Guardar</button>
+  </form>
+</mat-card>

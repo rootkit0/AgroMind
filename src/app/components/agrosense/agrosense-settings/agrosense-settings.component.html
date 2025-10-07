@@ -1,0 +1,19 @@
+<mat-card>
+  <mat-card-title>Configuración de AgroSense</mat-card-title>
+  <form [formGroup]="settingsForm">
+    <mat-form-field>
+      <mat-label>Intervalo de actualización (segundos)</mat-label>
+      <input matInput type="number" formControlName="refreshInterval" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Sistema de unidades</mat-label>
+      <mat-select formControlName="unitSystem">
+        <mat-option value="metric">Métrico (°C, %)</mat-option>
+        <mat-option value="imperial">Imperial (°F, in)</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+  </form>
+</mat-card>

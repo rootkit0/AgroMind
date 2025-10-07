@@ -1,0 +1,19 @@
+<mat-card *ngIf="analysis">
+  <mat-card-header>
+    <mat-card-title>Informe de análisis</mat-card-title>
+    <mat-card-subtitle>{{ analysis.date | date: 'short' }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <img [src]="analysis.imageUrl" alt="Mapa NDVI" class="analysis-img" />
+
+  <mat-card-content>
+    <p><strong>Índice NDVI medio:</strong> {{ analysis.ndviIndex | number:'1.2-2' }}</p>
+    <p>
+      <strong>Plagas detectadas:</strong>
+      <span [class.warn]="analysis.pestDetected">
+        {{ analysis.pestDetected ? 'Sí' : 'No' }}
+      </span>
+    </p>
+    <p *ngIf="analysis.notes"><strong>Notas:</strong> {{ analysis.notes }}</p>
+  </mat-card-content>
+</mat-card>

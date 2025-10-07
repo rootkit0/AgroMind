@@ -2,16 +2,21 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-export const AuthGuard: CanActivateFn = () => {
+export const FarmerAdminGuard: CanActivateFn = async () => {
   const auth = inject(AuthService);
   const router = inject(Router);
 
-  const isAuthenticated = auth.isLoggedIn();
-
-  if (!isAuthenticated) {
+  if (!auth.isLoggedIn()) {
     router.navigate(['/login']);
     return false;
   }
 
-  return true;
+  const role = await auth.currentUserRole();
+
+  if (role === 'admin' || role === 'farmer') {
+    return true;
+  }
+
+  router.navigate(['/access-denied']);
+  return false;
 };

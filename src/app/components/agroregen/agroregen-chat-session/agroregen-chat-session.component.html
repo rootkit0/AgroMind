@@ -1,0 +1,24 @@
+<mat-card class="chat-container">
+  <div class="chat-window">
+    <div *ngFor="let msg of messages" [ngClass]="msg.role">
+      <p>
+        <strong *ngIf="msg.role === 'user'">Tú:</strong>
+        <strong *ngIf="msg.role === 'assistant'">AgroRegen:</strong>
+        {{ msg.content }}
+      </p>
+    </div>
+
+    <div *ngIf="loading" class="loading">
+      <mat-progress-spinner diameter="24" mode="indeterminate"></mat-progress-spinner>
+    </div>
+  </div>
+
+  <div class="input-bar">
+    <mat-form-field class="input-full">
+      <input matInput placeholder="Escribe tu consulta..." [(ngModel)]="userInput" (keydown.enter)="sendMessage()" />
+    </mat-form-field>
+    <button mat-icon-button color="primary" (click)="sendMessage()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </div>
+</mat-card>

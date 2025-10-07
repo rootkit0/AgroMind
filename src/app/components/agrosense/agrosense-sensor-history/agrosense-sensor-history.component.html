@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>Histórico de lecturas</mat-card-title>
+  <mat-card-content>
+    <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+    <table *ngIf="!loading">
+      <tr>
+        <th>Fecha</th>
+        <th>Valor</th>
+        <th>Unidad</th>
+      </tr>
+      <tr *ngFor="let h of history">
+        <td>{{ h.timestamp | date:'short' }}</td>
+        <td>{{ h.value }}</td>
+        <td>{{ h.unit }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

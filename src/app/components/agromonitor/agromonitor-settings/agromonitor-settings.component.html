@@ -1,0 +1,22 @@
+<mat-card>
+  <mat-card-title>Configuración de Agromonitor</mat-card-title>
+
+  <form [formGroup]="settingsForm">
+    <mat-form-field>
+      <mat-label>Proveedor satelital</mat-label>
+      <mat-select formControlName="satelliteProvider">
+        <mat-option value="Sentinel-2">Sentinel-2</mat-option>
+        <mat-option value="Landsat-8">Landsat-8</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Umbral NDVI</mat-label>
+      <input matInput type="number" formControlName="ndviThreshold" step="0.01" />
+    </mat-form-field>
+
+    <mat-slide-toggle formControlName="autoNotify">Notificar automáticamente</mat-slide-toggle>
+
+    <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+  </form>
+</mat-card>

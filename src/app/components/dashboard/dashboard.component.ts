@@ -9,7 +9,7 @@ import { MatCardModule } from '@angular/material/card';
     imports: [MatCardModule],
     providers: [provideNativeDateAdapter()],
     templateUrl: './dashboard.component.html',
-    styleUrl: './dashboard.component.scss'
+    styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
   username!: string;

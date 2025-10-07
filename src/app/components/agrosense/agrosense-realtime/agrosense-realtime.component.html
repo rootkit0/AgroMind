@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Lecturas en tiempo real</mat-card-title>
+  <mat-card-content>
+    <mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+    <div *ngIf="!loading">
+      <div *ngFor="let r of readings">
+        <p>{{ r.timestamp | date:'shortTime' }} — {{ r.value }}</p>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

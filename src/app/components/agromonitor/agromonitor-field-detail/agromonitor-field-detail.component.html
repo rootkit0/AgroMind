@@ -1,0 +1,16 @@
+<mat-card *ngIf="field">
+  <mat-card-title>{{ field.name }}</mat-card-title>
+  <mat-card-subtitle>{{ field.cropType || 'Sin cultivo registrado' }}</mat-card-subtitle>
+
+  <mat-card-content>
+    <p>Área: {{ field.area }} ha</p>
+    <p>Ubicación:</p>
+    <pre>{{ field.coordinates | json }}</pre>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="startAnalysis()">
+      Ejecutar análisis satelital
+    </button>
+  </mat-card-actions>
+</mat-card>

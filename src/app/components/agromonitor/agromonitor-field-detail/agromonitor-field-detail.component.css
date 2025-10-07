@@ -1,0 +1,9 @@
+mat-card {
+  margin: 1rem auto;
+  max-width: 600px;
+}
+pre {
+  background: #f5f5f5;
+  border-radius: 6px;
+  padding: 0.5rem;
+}

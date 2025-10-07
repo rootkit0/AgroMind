@@ -1,0 +1,8 @@
+<mat-card *ngIf="chat">
+  <mat-card-title>{{ chat.title || 'Chat sin título' }}</mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let msg of chat.messages" [ngClass]="msg.role">
+      <p><strong>{{ msg.role }}:</strong> {{ msg.content }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>

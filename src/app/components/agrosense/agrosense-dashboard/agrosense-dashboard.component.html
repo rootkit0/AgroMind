@@ -1,0 +1,14 @@
+<mat-progress-spinner *ngIf="loading" mode="indeterminate"></mat-progress-spinner>
+
+<div class="grid" *ngIf="!loading">
+  <mat-card *ngFor="let sensor of sensors" routerLink="/agrosense/sensor/{{sensor.id}}">
+    <mat-card-title>{{ sensor.name }}</mat-card-title>
+    <mat-card-subtitle>{{ sensor.type }}</mat-card-subtitle>
+    <mat-card-content>
+      <p>Última lectura: {{ sensor.lastReading || 'Sin datos' }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="primary">Ver detalle</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

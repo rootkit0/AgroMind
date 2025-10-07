@@ -1,0 +1,12 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1rem;
+}
+.field-card {
+  border-left: 4px solid #4caf50;
+  transition: transform 0.2s ease;
+}
+.field-card:hover {
+  transform: translateY(-3px);
+}

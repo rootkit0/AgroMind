@@ -1,0 +1,13 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+mat-card {
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+mat-card:hover {
+  transform: translateY(-3px);
+}

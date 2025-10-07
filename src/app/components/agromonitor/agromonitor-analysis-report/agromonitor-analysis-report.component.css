@@ -1,0 +1,9 @@
+.analysis-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.warn {
+  color: #e53935;
+  font-weight: bold;
+}
