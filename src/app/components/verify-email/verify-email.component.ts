@@ -10,11 +10,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { AuthService } from '../../services/auth.service';
 
 @Component({
-  selector: 'app-verify-email',
-  standalone: true,
-  imports: [CommonModule, MatCardModule, MatListModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
-  templateUrl: './verify-email.component.html',
-  styleUrl: './verify-email.component.scss'
+    selector: 'app-verify-email',
+    imports: [CommonModule, MatCardModule, MatListModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule],
+    templateUrl: './verify-email.component.html',
+    styleUrl: './verify-email.component.scss'
 })
 export class VerifyEmailComponent {
   userData: any;
