@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { MatCardModule } from '@angular/material/card';
@@ -9,19 +10,22 @@ import { MatTableModule } from '@angular/material/table';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatLabel } from '@angular/material/form-field';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { environment } from '../../../environments/environment';
 
 @Component({
     selector: 'app-home',
-    imports: [CommonModule, FormsModule, MatCardModule, MatButtonModule, MatIcon, MatTableModule, MatFormFieldModule, MatInputModule, MatLabel],
+    imports: [CommonModule, RouterModule, FormsModule, MatCardModule, MatButtonModule, MatIcon, MatTableModule, MatFormFieldModule, MatInputModule, MatLabel],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css',
     encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
-    services = [
+  constructor(private snackBar: MatSnackBar) {}
+
+  services = [
     { title: 'AgroSense', text: 'Sensores inteligentes para medir humedad, temperatura y nutrientes del suelo.', icon: 'sensors' },
     { title: 'AgroMonitor', text: 'Plataforma satelital para visualizar índices NDVI, salud de cultivos e identificar plagas.', icon: 'monitor' },
     { title: 'AgroRegen', text: 'Asistente con modelo de IA propio para acompañarte en la regeneración de tus suelos y reducir insumos.', icon: 'eco' },
@@ -50,23 +54,53 @@ export class HomeComponent {
     this.servicesSection.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }
 
-  private serviceID = environment.emailjs.serviceID;
-  private templateID = environment.emailjs.templateID;
-  private publicKey = environment.emailjs.publicKey;
-
   sendEmail(): void {
     const form = document.querySelector('form');
     if (!form) return;
 
-    emailjs.sendForm(this.serviceID, this.templateID, form, this.publicKey)
+    const nameInput = form.querySelector('input[name="name"]') as HTMLInputElement;
+    const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement;
+    const phoneInput = form.querySelector('input[name="phone"]') as HTMLInputElement;
+    const messageInput = form.querySelector('textarea[name="message"]') as HTMLTextAreaElement;
+
+    if (!nameInput.value.trim() || !emailInput.value.trim() || !phoneInput.value.trim() || !messageInput.value.trim()) {
+      this.snackBar.open('⚠️ Por favor, completa todos los campos antes de enviar.', 'Cerrar', {
+        duration: 3000,
+        panelClass: ['error-snackbar']
+      });
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+      this.snackBar.open('⚠️ Introduce un correo electrónico válido.', 'Cerrar', {
+        duration: 3000,
+        panelClass: ['error-snackbar']
+      });
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        environment.emailjs.serviceID,
+        environment.emailjs.templateID,
+        form as HTMLFormElement,
+        environment.emailjs.publicKey
+      )
       .then((result: EmailJSResponseStatus) => {
         console.log('✅ Email enviado con éxito', result.text);
-        alert('¡Mensaje enviado con éxito!');
-        form.reset();
+        this.snackBar.open('✅ ¡Mensaje enviado con éxito!', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['success-snackbar']
+        });
+        (form as HTMLFormElement).reset();
       })
       .catch((error) => {
         console.error('❌ Error al enviar el correo', error);
-        alert('Hubo un error al enviar tu mensaje. Inténtalo más tarde.');
+        this.snackBar.open('❌ Hubo un error al enviar tu mensaje. Inténtalo más tarde.', 'Cerrar', {
+          duration: 3000,
+          panelClass: ['error-snackbar']
+        });
       });
   }
 }

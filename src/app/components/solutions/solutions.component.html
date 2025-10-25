@@ -1,0 +1,64 @@
+<section class="page-header">
+  <h1>Nuestras Soluciones</h1>
+  <p>Inteligencia artificial, sensórica y agricultura regenerativa al servicio del campo.</p>
+</section>
+
+<nav class="inpage-nav" aria-label="Navegación de secciones">
+  <a *ngFor="let item of nav" [href]="'#' + item.id">{{ item.label }}</a>
+</nav>
+
+<section *ngFor="let s of solutions" [id]="s.id" class="solution-block">
+  <mat-card class="solution-card">
+    <div class="hero">
+      <img [src]="s.image" alt="{{ s.name }}">
+      <div class="hero-overlay">
+        <span class="badge">{{ s.name }}</span>
+        <h2>{{ s.name }}</h2>
+        <p class="tagline">{{ s.tagline }}</p>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <div class="content-grid">
+      <div class="col">
+        <h3>Visión general</h3>
+        <p class="overview">{{ s.overview }}</p>
+
+        <h4>Casos de uso clave</h4>
+        <ul class="bullets">
+          <li *ngFor="let u of s.useCases">{{ u }}</li>
+        </ul>
+
+        <h4>Qué incluye</h4>
+        <ul class="checklist">
+          <li *ngFor="let inc of s.includes">{{ inc }}</li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <h3>Funciones principales</h3>
+        <ul class="bullets">
+          <li *ngFor="let f of s.features">{{ f }}</li>
+        </ul>
+
+        <h4>Cómo funciona</h4>
+        <ol class="workflow">
+          <li *ngFor="let step of s.workflow">{{ step }}</li>
+        </ol>
+
+        <div class="metrics">
+          <mat-chip-listbox aria-label="Indicadores de impacto">
+            <mat-chip *ngFor="let m of s.metrics" class="metric-chip" selected>{{ m }}</mat-chip>
+          </mat-chip-listbox>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a *ngIf="s.ctaLink" mat-raised-button color="primary" routerLink="/contactar">
+        Solicitar demo
+      </a>
+    </div>
+  </mat-card>
+</section>

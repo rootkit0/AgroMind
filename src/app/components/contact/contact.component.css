@@ -1,20 +1,24 @@
-.signup-card {
+.contact-card {
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 100px;
-    max-width: 500px;
+    max-width: 600px;
     text-align: center;
     background-color: #043915;
     color: #FFFFFF;
 }
 
-.signup-list, mat-form-field {
+.contact-list, mat-form-field {
     margin: 0 auto;
     padding: 10px 0 10px 0;
-    width: 400px;
+    width: 500px;
 }
 
-.signup-button {
+.contact-field textarea {
+  min-height: 120px;
+}
+
+.contact-button {
   margin: 0.8rem;
   padding: 2rem 2rem;
   font-size: 1rem;
@@ -36,11 +40,11 @@ button[mat-raised-button]:hover {
 }
 
 @media (max-width: 768px) {
-  .signup-card {
+  .contact-card {
     width: 90%;
   }
 
-  .signup-list, mat-form-field {
+  .contact-list, mat-form-field {
     width: 95%;
   }
 }

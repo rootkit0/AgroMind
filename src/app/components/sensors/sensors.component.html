@@ -1,0 +1,38 @@
+<div class="sensors-header">
+  <h2>Sensores de campo AgroMind</h2>
+  <p>
+    AgroMind integra una red de sensores IoT diseñados para monitorizar en tiempo real las condiciones del suelo,
+    el microclima y el estado fisiológico de los cultivos. Estos sensores son la base de nuestras recomendaciones inteligentes.
+  </p>
+</div>
+
+<div class="sensors-container">
+  <mat-card
+    class="sensor-card"
+    *ngFor="let sensor of sensors; let i = index"
+    [ngClass]="{ reverse: i % 2 === 1 }"
+  >
+    <div class="sensor-media">
+      <img [src]="sensor.image" [alt]="sensor.name" />
+    </div>
+
+    <div class="sensor-body">
+      <div class="sensor-header">
+        <mat-icon>{{ sensor.icon }}</mat-icon>
+        <h3>{{ sensor.name }}</h3>
+      </div>
+
+      <p>{{ sensor.description }}</p>
+
+      <ul>
+        <li *ngFor="let params of sensor.parameters">{{ params }}</li>
+      </ul>
+
+      <div class="sensor-button">
+        <button mat-stroked-button color="primary" routerLink="/contactar">
+          Obtener información
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</div>

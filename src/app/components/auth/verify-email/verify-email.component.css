@@ -1,8 +1,11 @@
 .verify-email-card {
     margin: 0 auto;
     margin-top: 50px;
+    margin-bottom: 50px;
     max-width: 500px;
     text-align: center;
+    background-color: #043915;
+    color: #FFFFFF;
 }
 
 .verify-email-list, mat-form-field {
@@ -12,5 +15,32 @@
 }
 
 .verify-email-button {
-    padding: 25px;
+  margin: 0.8rem;
+  padding: 2rem 2rem;
+  font-size: 1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+button[mat-raised-button] {
+  background-color: #B0CE88 !important;
+  color: #043915 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button[mat-raised-button]:hover {
+  background-color: #FFFDC1 !important;
+  color: #043915 !important;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .verify-email-card {
+    width: 90%;
+  }
+
+  .verify-email-list, mat-form-field {
+    width: 95%;
+  }
 }

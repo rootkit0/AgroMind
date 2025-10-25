@@ -1,11 +1,13 @@
 <mat-card class="verify-email-card">
   <mat-card-content>
-    <h2 class="verify-email-title">Verify email</h2>
+    <h2 class="verify-email-title">Verificar correo electrónico</h2>
     @if (userData; as User) {
       <mat-list class="verify-email-list">
-        <h3>We have sent a confirmation email to your email address. <strong>{{userData.email}}</strong>.</h3>
-        <h3>Please check your inbox and click the link to verify your account.</h3>
-        <button mat-raised-button color="primary" class="verify-email-button">Resend mail</button>
+        <h3>Hemos enviado un correo de confirmación a tu dirección de correo: <strong>{{userData.email}}</strong>.</h3>
+        <h3>Por favor, revisa tu bandeja de entrada y haz clic en el enlace para verificar tu cuenta.</h3>
+        <button mat-raised-button color="primary" class="verify-email-button">
+          Reenviar correo
+        </button>
       </mat-list>
     }
   </mat-card-content>

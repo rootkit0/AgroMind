@@ -1,0 +1,32 @@
+<mat-card class="contact-card">
+    <mat-card-content>
+        <h2 class="contact-title">¿Hablamos?</h2>
+        <mat-list class="contact-list">
+            <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
+                <mat-form-field appearance="fill" class="contact-field">
+                    <mat-label>Nombre y apellidos</mat-label>
+                    <input matInput name="name" ngModel placeholder="Nombre y apellidos" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="contact-field">
+                    <mat-label>Correo electrónico</mat-label>
+                    <input matInput name="email" ngModel placeholder="Correo electrónico" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="contact-field">
+                    <mat-label>Número de teléfono</mat-label>
+                    <input matInput name="phone" ngModel placeholder="Número de teléfono" required>
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="contact-field">
+                    <mat-label>Escribe tu mensaje</mat-label>
+                    <textarea matInput name="message" ngModel placeholder="Escribe tu mensaje" required></textarea>
+                </mat-form-field>
+
+                <button mat-raised-button color="primary" class="contact-button" type="submit">
+                    Enviar mensaje
+                </button>
+            </form>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

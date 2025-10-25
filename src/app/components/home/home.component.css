@@ -54,13 +54,14 @@ button[mat-raised-button]:hover {
 }
 
 button[mat-stroked-button] {
-  border-color: #FFFDC1 !important;
-  color: #FFFDC1 !important;
+  background-color: #FFFDC1 !important;
+  color: #043915 !important;
 }
 
 button[mat-stroked-button]:hover {
-  background-color: #FFFDC1 !important;
-  color: #043915 !important;
+  background-color: #043915 !important;
+  border-color: #FFFDC1 !important;
+  color: #FFFDC1 !important;
   transform: scale(1.05);
 }
 

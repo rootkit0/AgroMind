@@ -26,7 +26,7 @@
     </div>
   </div>
   <div class="hero-buttons">
-    <button mat-stroked-button color="primary" (click)="scrollToServices()">Ver soluciones</button>
+    <button mat-stroked-button color="primary" routerLink="/soluciones">Ver soluciones</button>
   </div>
 </section>
 
@@ -56,7 +56,7 @@
   <p>* Todos los kits incluyen acceso gratuito a la aplicación AgroSense para monitorizar los sensores</p>
   <p>** Temporalmente se ofrece acceso gratuito de por vida a la aplicación AgroMonitor para monitorizar una de sus fincas</p>
   <div class="hero-buttons">
-    <button mat-raised-button color="primary" (click)="scrollToContact()">Ver sensores</button>
+    <button mat-raised-button color="primary" routerLink="/sensores">Ver sensores</button>
   </div>
 </section>
 
@@ -73,17 +73,22 @@
 
   <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
     <mat-form-field appearance="fill" class="contact-field">
-      <mat-label>Nombre</mat-label>
-      <input matInput name="from_name" ngModel placeholder="Introduce tu nombre" required>
+      <mat-label>Nombre y apellidos</mat-label>
+      <input matInput name="name" ngModel placeholder="Nombre y apellidos" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="contact-field">
-      <mat-label>Email</mat-label>
-      <input matInput name="from_email" ngModel type="email" placeholder="Introduce tu correo electrónico" required>
+      <mat-label>Correo electrónico</mat-label>
+      <input matInput name="email" ngModel placeholder="Correo electrónico" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="contact-field">
-      <mat-label>Mensaje</mat-label>
+      <mat-label>Número de teléfono</mat-label>
+      <input matInput name="phone" ngModel placeholder="Número de teléfono" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="contact-field">
+      <mat-label>Escribe tu mensaje</mat-label>
       <textarea matInput name="message" ngModel placeholder="Escribe tu mensaje" required></textarea>
     </mat-form-field>
 

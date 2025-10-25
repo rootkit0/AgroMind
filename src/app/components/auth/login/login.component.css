@@ -34,3 +34,13 @@ button[mat-raised-button]:hover {
   color: #043915 !important;
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .login-card {
+    width: 90%;
+  }
+
+  .login-list, mat-form-field {
+    width: 95%;
+  }
+}
