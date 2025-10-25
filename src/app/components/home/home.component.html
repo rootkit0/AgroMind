@@ -1,12 +1,94 @@
-<mat-card class="home-card">
-    <mat-card-content>
-        <h2>🚀 Angular 20 + Firebase Auth Starter Template</h2>
-        <h4>This project is a base template built with Angular 20, designed to provide a modern, secure, and efficient solution for applications requiring user authentication. It comes fully configured with Firebase Authentication, standalone components, custom guards, and the latest Angular improvements.</h4>
-        <h2>✨ Features</h2>
-        <h4>✅ Angular 20 with standalone components support</h4>
-        <h4>🔐 Full integration with Firebase Auth (email/password, Google, etc.)</h4>
-        <h4>🔄 Custom auth guards to protect routes</h4>
-        <h4>🚀 Centralized `AuthService` to manage user state</h4>
-        <h4>🧱 Ready to scale and extend with new features</h4>
-    </mat-card-content>
-</mat-card>
+<section class="hero">
+  <h1>AgroMind.es</h1>
+  <p>Inteligencia para un campo más sostenible 🌍</p>
+  <p>Optimiza tu producción agrícola con datos, sensores y conocimiento regenerativo.</p>
+  <div class="hero-buttons">
+    <button mat-raised-button color="primary" (click)="scrollToContact()">Solicitar demo gratuita</button>
+    <button mat-stroked-button color="primary" (click)="scrollToServices()">Descubre nuestras soluciones</button>
+  </div>
+</section>
+
+<section class="about">
+  <h2>Quiénes somos</h2>
+  <p>Somos dos jóvenes emprendedores apasionados por la tecnología y la sostenibilidad en el sector agroalimentario.</p>
+  <p><strong>👦🏻 Xavi</strong>, ingeniero informático especializado en IoT y desarrollo de soluciones inteligentes, lidera la parte tecnológica del proyecto.</p>
+  <p><strong>👩🏼 Rebeca</strong>, tecnóloga de los alimentos experta en microbiología y suelos agrícolas, aporta la visión científica y regenerativa.</p>
+</section>
+
+<section #servicesSection id="services" class="services">
+  <h2>Nuestras soluciones</h2>
+
+  <div class="services-container">
+    <div class="service-card" *ngFor="let service of services">
+      <mat-icon class="service-icon" style="font-size: 42px; width: 42px; height: 42px;">{{ service.icon }}</mat-icon>
+      <h3>{{service.title}}</h3>
+      <p>{{service.text}}</p>
+    </div>
+  </div>
+  <div class="hero-buttons">
+    <button mat-stroked-button color="primary" (click)="scrollToServices()">Ver soluciones</button>
+  </div>
+</section>
+
+<section class="kits">
+  <h2>Nuestros Kits Inteligentes</h2>
+  <div class="table-container">
+    <table mat-table [dataSource]="kits" class="mat-elevation-z2">
+      <ng-container matColumnDef="kit">
+        <th mat-header-cell *matHeaderCellDef> Kit </th>
+        <td mat-cell *matCellDef="let element"> <strong>{{element.kit}}</strong> </td>
+      </ng-container>
+
+      <ng-container matColumnDef="contenido">
+        <th mat-header-cell *matHeaderCellDef> Contenido </th>
+        <td mat-cell *matCellDef="let element"> {{element.contenido}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="precio">
+        <th mat-header-cell *matHeaderCellDef> Precio </th>
+        <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  <p>* Todos los kits incluyen acceso gratuito a la aplicación AgroSense para monitorizar los sensores</p>
+  <p>** Temporalmente se ofrece acceso gratuito de por vida a la aplicación AgroMonitor para monitorizar una de sus fincas</p>
+  <div class="hero-buttons">
+    <button mat-raised-button color="primary" (click)="scrollToContact()">Ver sensores</button>
+  </div>
+</section>
+
+<section class="tech">
+  <h2>Tecnologías utilizadas</h2>
+  <p>🌱 En AgroMind integramos diferentes tecnologías de vanguardia para conectar el campo con la inteligencia artificial. Nuestros sensores utilizan redes IoT de bajo consumo como NB-IoT, que permiten transmitir datos en tiempo real desde cualquier entorno rural con un mínimo consumo energético.</p>
+  <p>💻 Toda la información se procesa y visualiza en una plataforma web desarrollada con Angular y apoyada en bases de datos en la nube y algoritmos propios que analizan los parámetros del suelo, clima y cultivo.</p>
+  <p>🚀 Además, todas nuestras soluciones estan pensadas para garantizar compatibilidad y escalabilidad en todas las condiciones agrícolas.</p>
+</section>
+
+<section #contactSection id="contact" class="contact">
+  <h2>Contacto</h2>
+  <p>¿Te ha resultado de interés nuestro proyecto? ¡Hablemos!</p>
+
+  <form (ngSubmit)="sendEmail()" #contactForm="ngForm">
+    <mat-form-field appearance="fill" class="contact-field">
+      <mat-label>Nombre</mat-label>
+      <input matInput name="from_name" ngModel placeholder="Introduce tu nombre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="contact-field">
+      <mat-label>Email</mat-label>
+      <input matInput name="from_email" ngModel type="email" placeholder="Introduce tu correo electrónico" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="contact-field">
+      <mat-label>Mensaje</mat-label>
+      <textarea matInput name="message" ngModel placeholder="Escribe tu mensaje" required></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="contact-button" type="submit">
+      Enviar mensaje
+    </button>
+  </form>
+</section>

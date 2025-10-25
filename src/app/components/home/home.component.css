@@ -1,7 +1,259 @@
-.home-card {
-    margin: 0 auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 80%;
-    text-align: center;
+/* Hero Section */
+.hero {
+  background-color: #043915;
+  color: #FFFDC1;
+  text-align: center;
+  padding: 6rem 2rem;
+  border-radius: 0 0 60px 60px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #FFFDC1;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #E9F8E5;
+  margin: 0.5rem auto;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+/* Hero Buttons */
+.hero-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-buttons button {
+  margin: 0.8rem;
+  padding: 2.5rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+button[mat-raised-button] {
+  background-color: #B0CE88 !important;
+  color: #043915 !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button[mat-raised-button]:hover {
+  background-color: #FFFDC1 !important;
+  color: #043915 !important;
+  transform: scale(1.05);
+}
+
+button[mat-stroked-button] {
+  border-color: #FFFDC1 !important;
+  color: #FFFDC1 !important;
+}
+
+button[mat-stroked-button]:hover {
+  background-color: #FFFDC1 !important;
+  color: #043915 !important;
+  transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+  background-color: #FFFDC1;
+  color: #043915;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #043915;
+}
+
+.about p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Services Section */
+.services {
+  background-color: #B0CE88;
+  color: #043915;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #043915;
+}
+
+.service-card {
+  background-color: #FFFDC1;
+  color: #043915;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 20px;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card h3 {
+  font-size: 1.8rem;
+  color: #043915;
+}
+
+.service-card p {
+  font-size: 1.5rem;
+  color: #043915;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap; /* Para que sean responsivas */
+  gap: 2rem; /* Espacio entre las cards */
+}
+
+.service-card {
+  flex: 1 1 300px; /* Crece, encoge y ancho base de 300px */
+  max-width: 350px; /* Limita el ancho máximo */
+}
+
+
+/* Kits Section */
+.kits {
+  background-color: #FFFDC1;
+  color: #043915;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.kits h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #043915;
+}
+
+.kits table {
+  margin: 0 auto;
+  width: 80%;
+  background-color: #B0CE88;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.kits th {
+  background-color: #4C763B;
+  color: #043915;
+  font-weight: 600;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.kits td {
+  background-color: #FFFDC1;
+  color: #043915;
+  padding: 1rem;
+  border-bottom: 1px solid #B0CE88;
+  font-size: 1.5rem;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .kits table {
+    width: 1000px; /* ancho mínimo para permitir el scroll */
+  }
+
+  .kits th,
+  .kits td {
+    font-size: 1.25rem; /* reduce tamaño de texto */
+    padding: 0.75rem;
+    white-space: normal; /* permite que el texto haga salto de línea */
+  }
+}
+
+
+/* Tech Section */
+.tech {
+  background-color: #B0CE88;
+  color: #043915;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.tech h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #043915;
+}
+
+.tech p {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #043915;
+}
+
+/* Contact Section */
+.contact {
+  background-color: #043915;
+  color: #FFFDC1;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.contact h2 {
+  color: #FFFDC1;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.contact p {
+  font-size: 1.5rem;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.contact-field {
+  width: 100%;
+}
+
+.contact-field textarea {
+  min-height: 120px;
+}
+
+.contact-button {
+  padding: 2rem 2rem !important;
+  font-size: 1rem !important;
+  border-radius: 30px !important;
+  transition: all 0.3s ease-in-out !important;
+  font-weight: 600 !important;
 }

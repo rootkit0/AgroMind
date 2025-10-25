@@ -3,4 +3,5 @@ export interface SensorReading {
   sensorId: string;
   timestamp: Date;
   value: number;
+  unit?: string;
 }

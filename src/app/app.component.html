@@ -1,33 +1,60 @@
 <div class="app-container">
   <mat-toolbar color="primary" class="app-toolbar">
-    <h1 class="app-name" routerLink="/home">Angular 20 Auth Template</h1>
+    <button mat-icon-button (click)="snav.toggle()" aria-label="Toggle sidenav">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="app-name" routerLink="/home">AgroMind.es</h1>
   </mat-toolbar>
 
   <mat-drawer-container class="app-sidenav-container">
-    <mat-drawer #snav class="sidenav" mode="side" opened>
+    <mat-drawer #snav class="sidenav" mode="push">
       @if (!isLoggedIn) {
         <mat-nav-list>
           <mat-list-item routerLink="/login" routerLinkActive="active">
-            <a>Log in</a>
+            <a>Iniciar Sesión</a>
           </mat-list-item>
           <mat-list-item routerLink="/signup" routerLinkActive="active">
-            <a>Sign up</a>
+            <a>Registrarse</a>
           </mat-list-item>
         </mat-nav-list>
       }
       @if (isLoggedIn) {
         <mat-nav-list>
           <mat-list-item routerLink="/dashboard" routerLinkActive="active">
-            <a>Dashboard</a>
+            <a>Panel de control</a>
           </mat-list-item>
           <mat-list-item (click)="logout()">
-            <a>Logout</a>
+            <a>Cerrar Sesión</a>
           </mat-list-item>
         </mat-nav-list>
       }
     </mat-drawer>
-    <mat-drawer-content>
+    <mat-drawer-content class="app-drawer-content">
       <router-outlet></router-outlet>
+      <footer class="footer">
+        <div class="footer-content">
+          <div class="footer-logo">
+            <h3>AgroMind.es</h3>
+            <p>Conectando la tierra con la inteligencia artificial.</p>
+          </div>
+
+          <div class="footer-social">
+          <a href="https://instagram.com/agromind.es" aria-label="Instagram">
+            <mat-icon>photo_camera</mat-icon>
+          </a>
+          <a href="https://es.linkedin.com/in/xavierberga" aria-label="LinkedIn">
+            <mat-icon>work</mat-icon>
+          </a>
+          <a href="mailto:xavier@alimentandoconciencia.com" aria-label="Email">
+            <mat-icon>alternate_email</mat-icon>
+          </a>
+        </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2025 AgroMind. Todos los derechos reservados.</p>
+        </div>
+      </footer>
     </mat-drawer-content>
   </mat-drawer-container>
 </div>
