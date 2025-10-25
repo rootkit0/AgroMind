@@ -1,10 +1,76 @@
-<div class="dashboard-content">
-  <div class="dashboard-content">
-    <mat-card class="dashboard-card">
-      <mat-card-content class="dashboard-card-content">
-        <h2>This component can only be seen by authenticated users.</h2>
-        <h2>Hello, {{username}}</h2>
-      </mat-card-content>
-    </mat-card>
-  </div>
-</div>
+<div class="dashboard-wrapper">
+  <h2 class="dashboard-title">DEMO: Panel de control AgroMind</h2>
+  <p class="dashboard-subtitle">
+    Seleccione un campo para consultar sus datos 🌱
+  </p>
+
+  <mat-card class="dashboard-card selector-card">
+    <mat-card-content>
+      <mat-form-field appearance="fill" class="campo-dropdown">
+        <mat-label>Selecciona un campo</mat-label>
+        <mat-select [(value)]="campoSeleccionado" (selectionChange)="actualizarCampo()">
+          <mat-option *ngFor="let campo of campos" [value]="campo.id">
+            {{ campo.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>Lectura de los sensores en tiempo real</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Datos de los sensores del campo <strong>{{ campoActivo.nombre }}</strong>:</p>
+      <ul>
+        <li *ngFor="let sensor of campoActivo.sensores">
+          {{ sensor.nombre }} — <strong>{{ sensor.valor }}</strong> {{ sensor.unidad }}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>Imagen satelital del campo</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="ndvi-content">
+      <canvas #ndviCanvas class="ndvi-canvas"></canvas>
+      <div class="ndvi-legend">
+        <span>Estrés</span>
+        <div class="ndvi-gradient"></div>
+        <span>Saludable</span>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>Estado del campo y recomendaciones (último análisis NDVI)</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p><strong>Salud del campo:</strong> {{ campoActivo.estado }}</p>
+      <p><strong>Índice NDVI promedio:</strong> {{ campoActivo.ndvi | number:'1.2-2' }}</p>
+      <ul>
+        <li *ngFor="let rec of campoActivo.recomendaciones">{{ rec }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="dashboard-card">
+  <mat-card-header>
+    <mat-card-title>Recomendaciones específicas</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Sugerencias generadas según las lecturas actuales y el historial del campo
+      <strong>{{ campoActivo.nombre }}</strong>:
+    </p>
+    <ul>
+      <li *ngFor="let rec of recomendacionesCampo">
+        {{ rec }}
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

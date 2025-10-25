@@ -3,7 +3,6 @@ import { Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
 import { AdminGuard } from './guards/admin.guard';
 import { FarmerGuard } from './guards/farmer.guard';
-import { FarmerAdminGuard } from './guards/farmeradmin.guard';
 
 // === AUTH ===
 import { LoginComponent } from './components/auth/login/login.component';
@@ -38,16 +37,22 @@ import { AgroregenStatsComponent } from './components/agroregen/agroregen-stats/
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AccessDeniedComponent } from './components/access-denied/access-denied.component';
+import { SensorsComponent } from './components/sensors/sensors.component';
+import { SolutionsComponent } from './components/solutions/solutions.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 export const routes: Routes = [
   // === AUTH ===
   { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
-  { path: 'verify-email', component: VerifyEmailComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'iniciar-sesion', component: LoginComponent },
+  { path: 'registro', component: SignupComponent },
+  { path: 'verificar-correo', component: VerifyEmailComponent, canActivate: [AuthGuard] },
+  { path: 'recuperar-contrasena', component: ForgotPasswordComponent },
 
-  // === DASHBOARD GENERAL ===
+  // === GENERAL ===
+  { path: 'sensores', component: SensorsComponent },
+  { path: 'soluciones', component: SolutionsComponent },
+  { path: 'contacto', component: ContactComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
 
   // === AGROMONITOR ===
@@ -93,8 +98,8 @@ export const routes: Routes = [
   },
 
   // === GENERAL ===
-  { path: 'access-denied', component: AccessDeniedComponent },
+  { path: '404', component: AccessDeniedComponent },
 
   // === 404 ===
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '/404' },
 ];

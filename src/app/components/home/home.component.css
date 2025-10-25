@@ -10,14 +10,14 @@
 }
 
 .hero h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   color: #FFFDC1;
 }
 
 .hero p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #E9F8E5;
   margin: 0.5rem auto;
   max-width: 800px;
@@ -34,7 +34,7 @@
 
 .hero-buttons button {
   margin: 0.8rem;
-  padding: 2.5rem 2.5rem;
+  padding: 2rem 2rem;
   font-size: 1.2rem;
   border-radius: 30px;
   transition: all 0.3s ease-in-out;
@@ -74,13 +74,13 @@ button[mat-stroked-button]:hover {
 }
 
 .about h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #043915;
 }
 
 .about p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   max-width: 900px;
   margin: 0 auto;
@@ -95,7 +95,7 @@ button[mat-stroked-button]:hover {
 }
 
 .services h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   color: #043915;
 }
@@ -111,12 +111,12 @@ button[mat-stroked-button]:hover {
 }
 
 .service-card h3 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: #043915;
 }
 
 .service-card p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #043915;
 }
 
@@ -143,7 +143,7 @@ button[mat-stroked-button]:hover {
 }
 
 .kits h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   color: #043915;
 }
@@ -162,7 +162,7 @@ button[mat-stroked-button]:hover {
   color: #043915;
   font-weight: 600;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .kits td {
@@ -170,7 +170,7 @@ button[mat-stroked-button]:hover {
   color: #043915;
   padding: 1rem;
   border-bottom: 1px solid #B0CE88;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .table-container {
@@ -186,7 +186,7 @@ button[mat-stroked-button]:hover {
 
   .kits th,
   .kits td {
-    font-size: 1.25rem; /* reduce tamaño de texto */
+    font-size: 1.2rem; /* reduce tamaño de texto */
     padding: 0.75rem;
     white-space: normal; /* permite que el texto haga salto de línea */
   }
@@ -202,13 +202,13 @@ button[mat-stroked-button]:hover {
 }
 
 .tech h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: #043915;
 }
 
 .tech p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   max-width: 900px;
   margin: 0 auto;
@@ -225,13 +225,13 @@ button[mat-stroked-button]:hover {
 
 .contact h2 {
   color: #FFFDC1;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 2rem;
   font-weight: 700;
 }
 
 .contact p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .contact form {
@@ -253,7 +253,7 @@ button[mat-stroked-button]:hover {
 
 .contact-button {
   padding: 2rem 2rem !important;
-  font-size: 1rem !important;
+  font-size: 1.2rem !important;
   border-radius: 30px !important;
   transition: all 0.3s ease-in-out !important;
   font-weight: 600 !important;

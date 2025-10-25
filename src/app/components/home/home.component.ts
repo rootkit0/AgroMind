@@ -32,11 +32,16 @@ export class HomeComponent {
   ];
 
   kits = [
-    { kit: 'Kit básico', contenido: 'Sensor de estrés térmico + Sonda capacitativa para medir la humedad', precio: '299€' },
-    { kit: 'Kit nutrientes', contenido: 'Sensor de conductividad eléctrica + Sensor micro/macro nutrientes', precio: '299€' },
-    { kit: 'Sensor humedad foliar', contenido: 'Sensor de estrés hídrico de la planta/potencial de la hoja o tallo', precio: '299€' },
-    { kit: 'Estación meteorológica', contenido: 'Pluviómetro + Temperatura/Humedad en aire + Viento + Radiación solar', precio: '699€' },
-    { kit: 'Kit Regenerativo', contenido: 'Análisis avanzado de suelo (Auditoría) + AgroRegen IA', precio: '199€ + 15€/mes' },
+    { kit: 'Sensor de estrés térmico', contenido: 'Mide la temperatura del suelo a distintas profundidades', precio: '159€' },
+    { kit: 'Sonda capacitativa', contenido: 'Mide la humedad volumétrica del suelo mediante tecnología capacitiva', precio: '199€' },
+    { kit: 'Sensor de fertirrigación', contenido: 'Mide la conductividad eléctrica (CE) y el contenido de nutrientes disueltos en el agua de riego', precio: '199€' },
+    { kit: 'Sensor NPK', contenido: 'Mide la el contenido de nutrientes disueltos en el suelo (Nitrógeno, Fósforo y Potáseo)', precio: '199€' },
+    { kit: 'Sensor de humectación foliar', contenido: 'Detecta la presencia de agua o rocío en la superficie de las hojas', precio: '199€' },
+    { kit: 'Pluviómetro', contenido: 'Mide la cantidad de precipitación acumulada y la intensidad de lluvia', precio: '299€' },
+    { kit: 'Higrómetro ambiental', contenido: 'Registra la temperatura y la humedad relativa del aire', precio: '359€' },
+    { kit: 'Kit básico', contenido: 'Sensor de estrés térmico + Sensor capacitativo', precio: '299€' },
+    { kit: 'Kit nutrientes', contenido: 'Sensor de fertirrigación + Sensor NPK', precio: '349€' },
+    { kit: 'Kit Regenerativo', contenido: 'Análisis avanzado de suelo (Auditoría) + AgroRegen IA', precio: '249€ + 15€/mes' },
     { kit: 'Kit Personalizado', contenido: 'Personalizado', precio: 'A consultar'}
   ];
 

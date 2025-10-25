@@ -3,17 +3,17 @@
     <button mat-icon-button (click)="snav.toggle()" aria-label="Toggle sidenav">
       <mat-icon>menu</mat-icon>
     </button>
-    <h1 class="app-name" routerLink="/home">AgroMind.es</h1>
+    <h1 class="app-name" routerLink="/">AgroMind.es</h1>
   </mat-toolbar>
 
   <mat-drawer-container class="app-sidenav-container">
     <mat-drawer #snav class="sidenav" mode="push">
       @if (!isLoggedIn) {
         <mat-nav-list>
-          <mat-list-item routerLink="/login" routerLinkActive="active">
+          <mat-list-item routerLink="/iniciar-sesion" routerLinkActive="active">
             <a>Iniciar Sesión</a>
           </mat-list-item>
-          <mat-list-item routerLink="/signup" routerLinkActive="active">
+          <mat-list-item routerLink="/registro" routerLinkActive="active">
             <a>Registrarse</a>
           </mat-list-item>
         </mat-nav-list>
@@ -35,7 +35,7 @@
         <div class="footer-content">
           <div class="footer-logo">
             <h3>AgroMind.es</h3>
-            <p>Conectando la tierra con la inteligencia artificial.</p>
+            <p>Conectamos la tierra con la inteligencia artificial.</p>
           </div>
 
           <div class="footer-social">

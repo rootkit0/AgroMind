@@ -20,11 +20,8 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-                "output": "/assets/"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": [
               "src/styles.css",
@@ -98,11 +95,8 @@
             "karmaConfig": "karma.conf.js",
             "polyfills": ["zone.js"],
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public",
-                "output": "/assets/"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
             "styles": ["src/styles.css"],
             "scripts": []

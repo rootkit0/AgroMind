@@ -1,1 +1,107 @@
-<p>access-denied works!</p>
+<div class="nf-wrap">
+  <h1 class="nf-title">404 — ¡Campo sin sembrar! 🌾</h1>
+  <p class="nf-subtitle">
+    Parece que esta URL está en barbecho… La página que buscas no existe o fue cosechada. 🌱
+  </p>
+
+  <!-- Escena -->
+  <div class="scene">
+    <!-- Cielo -->
+    <div class="sky">
+      <div class="cloud c1"></div>
+      <div class="cloud c2"></div>
+      <div class="cloud c3"></div>
+    </div>
+
+    <!-- Campo -->
+    <div class="field">
+      <div class="furrow"></div>
+      <div class="furrow"></div>
+      <div class="furrow"></div>
+      <div class="furrow"></div>
+
+      <!-- Cosechadora (SVG inline) -->
+      <div class="tractor" aria-label="Tractor animado">
+        <svg viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" aria-label="Cosechadora animada">
+            <!-- Cuerpo principal -->
+            <rect x="40" y="70" width="160" height="45" rx="8" fill="#2e7d32" stroke="#1b5e20" stroke-width="2"/>
+            <rect x="140" y="45" width="80" height="40" rx="6" fill="#43a047" stroke="#1b5e20" stroke-width="2"/>
+            
+            <!-- Cabina -->
+            <rect x="150" y="52" width="55" height="26" rx="3" fill="#b3e5fc" stroke="#1b5e20" stroke-width="2"/>
+            <line x1="170" y1="52" x2="170" y2="78" stroke="#1b5e20" stroke-width="2"/>
+            
+            <!-- Chimenea -->
+            <rect x="215" y="35" width="6" height="18" fill="#424242"/>
+            <circle cx="218" cy="34" r="3" fill="#616161"/>
+            
+            <!-- Rueda trasera -->
+            <circle cx="90" cy="120" r="26" fill="#1b1b1b"/>
+            <circle cx="90" cy="120" r="14" fill="#757575"/>
+            <circle cx="90" cy="120" r="4" fill="#212121"/>
+            
+            <!-- Rueda delantera -->
+            <circle cx="180" cy="120" r="32" fill="#1b1b1b"/>
+            <circle cx="180" cy="120" r="18" fill="#9e9e9e"/>
+            <circle cx="180" cy="120" r="5" fill="#212121"/>
+
+            <!-- Tubo de descarga -->
+            <rect x="215" y="55" width="55" height="10" rx="3" fill="#4caf50" stroke="#1b5e20" stroke-width="2"/>
+            <circle cx="270" cy="60" r="5" fill="#2e7d32" stroke="#1b5e20" stroke-width="1"/>
+
+            <!-- Plataforma de corte mejorada -->
+            <g transform="translate(260,105)">
+            <rect x="0" y="-14" width="50" height="28" rx="4" fill="#4caf50" stroke="#1b5e20" stroke-width="2"/>
+
+            <!-- Brazos soporte -->
+            <rect x="5" y="-3" width="40" height="6" fill="#2e7d32"/>
+            
+            <!-- Discos de cuchillas giratorios -->
+            <g class="blade" transform="translate(10,0)">
+                <circle r="7" fill="url(#metalGradient)" stroke="#555" stroke-width="1"/>
+                <path d="M0,-7 L1,-3 L7,0 L1,3 L0,7 L-1,3 L-7,0 L-1,-3 Z" fill="#bdbdbd"/>
+            </g>
+
+            <g class="blade" transform="translate(25,0)">
+                <circle r="7" fill="url(#metalGradient)" stroke="#555" stroke-width="1"/>
+                <path d="M0,-7 L1,-3 L7,0 L1,3 L0,7 L-1,3 L-7,0 L-1,-3 Z" fill="#bdbdbd"/>
+            </g>
+
+            <g class="blade" transform="translate(40,0)">
+                <circle r="7" fill="url(#metalGradient)" stroke="#555" stroke-width="1"/>
+                <path d="M0,-7 L1,-3 L7,0 L1,3 L0,7 L-1,3 L-7,0 L-1,-3 Z" fill="#bdbdbd"/>
+            </g>
+
+            <!-- Gradiente metálico -->
+            <defs>
+                <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#eeeeee"/>
+                <stop offset="50%" stop-color="#9e9e9e"/>
+                <stop offset="100%" stop-color="#e0e0e0"/>
+                </linearGradient>
+            </defs>
+            </g>
+
+            <!-- Luces -->
+            <circle cx="42" cy="85" r="4" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1"/>
+            <circle cx="200" cy="60" r="3" fill="#ffeb3b" stroke="#fbc02d" stroke-width="1"/>
+
+            <!-- Humo animado -->
+            <circle class="smoke" cx="218" cy="30" r="3" fill="#d7ccc8" opacity="0.6"/>
+            <circle class="smoke" cx="218" cy="22" r="4" fill="#d7ccc8" opacity="0.4"/>
+            <circle class="smoke" cx="218" cy="14" r="5" fill="#d7ccc8" opacity="0.3"/>
+        </svg>
+      </div>
+
+      <!-- Plantitas -->
+      <div class="sprout s1">🌿</div>
+      <div class="sprout s2">🌿</div>
+      <div class="sprout s3">🌿</div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" (click)="goHome()">Volver a la portada</button>
+    <button mat-stroked-button color="primary" (click)="report()">Informar de este barbecho</button>
+  </div>
+</div>

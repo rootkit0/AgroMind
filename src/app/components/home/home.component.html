@@ -1,7 +1,7 @@
 <section class="hero">
-  <h1>AgroMind.es</h1>
-  <p>Inteligencia para un campo más sostenible 🌍</p>
-  <p>Optimiza tu producción agrícola con datos, sensores y conocimiento regenerativo.</p>
+  <h1>AgroMind</h1>
+  <p>Tu asistente inteligente para el campo 🌾</p>
+  <p>Reduce costes, mejora tus cultivos y cuida el planeta con tecnología IoT y agricultura regenerativa.</p>
   <div class="hero-buttons">
     <button mat-raised-button color="primary" (click)="scrollToContact()">Solicitar demo gratuita</button>
     <button mat-stroked-button color="primary" (click)="scrollToServices()">Descubre nuestras soluciones</button>
@@ -31,7 +31,7 @@
 </section>
 
 <section class="kits">
-  <h2>Nuestros Kits Inteligentes</h2>
+  <h2>Nuestros Sensores Inteligentes</h2>
   <div class="table-container">
     <table mat-table [dataSource]="kits" class="mat-elevation-z2">
       <ng-container matColumnDef="kit">
@@ -40,7 +40,7 @@
       </ng-container>
 
       <ng-container matColumnDef="contenido">
-        <th mat-header-cell *matHeaderCellDef> Contenido </th>
+        <th mat-header-cell *matHeaderCellDef> Parámetros </th>
         <td mat-cell *matCellDef="let element"> {{element.contenido}} </td>
       </ng-container>
 
@@ -53,7 +53,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-  <p>* Todos los kits incluyen acceso gratuito a la aplicación AgroSense para monitorizar los sensores</p>
+  <p>* Todos los sensores incluyen acceso gratuito a la aplicación AgroSense para monitorizar los sensores</p>
   <p>** Temporalmente se ofrece acceso gratuito de por vida a la aplicación AgroMonitor para monitorizar una de sus fincas</p>
   <div class="hero-buttons">
     <button mat-raised-button color="primary" routerLink="/sensores">Ver sensores</button>
