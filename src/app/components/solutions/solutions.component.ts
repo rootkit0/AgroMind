@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { MatCardModule } from '@angular/material/card';
@@ -28,6 +28,8 @@ interface Solution {
   styleUrl: './solutions.component.css'
 })
 export class SolutionsComponent {
+  constructor(private viewportScroller: ViewportScroller) {}
+
   nav = [
     { id: 'agrosense', label: 'AgroSense' },
     { id: 'agromonitor', label: 'AgroMonitor' },
@@ -39,111 +41,121 @@ export class SolutionsComponent {
       id: 'agrosense',
       name: 'AgroSense',
       image: 'assets/solutions/agricultura1.jpg',
-      tagline: 'Monitoreo IoT del suelo y microclima en tiempo real.',
+      tagline: 'Sensores inteligentes que transforman los datos del suelo en decisiones agrícolas precisas',
       overview:
-        'AgroSense integra sensores de humedad, temperatura, pH, conductividad, ORP y NPK para ofrecer datos en tiempo real del suelo y el ambiente. El panel muestra históricos, alertas configurables y recomendaciones de riego/fertilización basadas en modelos de balance hídrico. Pensado para reducir consumos y en todos los sectores agrícolas.',
+        'AgroSense monitoriza en tiempo real la humedad, temperatura, pH, conductividad eléctrica, potencial REDOX y nutrientes (NPK) del suelo. Los datos se procesan en nuestra plataforma inteligente, que muestra históricos, genera alertas automáticas y recomienda cuándo y cuánto regar o fertilizar, optimizando recursos y rendimiento.',
       features: [
-        'Lectura continua de humedad, temperatura, pH, CE y ORP.',
-        'Cálculo de VWC, ETo local (con datos meteo) y déficit hídrico por sector.',
-        'Alarmas por SMS/email/app ante umbrales de humedad, salinidad o temperatura.',
-        'Cuadros de mando con gráficos comparativos por parcela y campaña.',
-        'Exportación Excel para integración con otras herramientas.',
+        'Medición continua de parámetros críticos del suelo y microclima',
+        'Alertas inteligentes por app, SMS o correo ante niveles fuera de rango',
+        'Cuadros de mando comparativos por parcela, cultivo y campaña',
+        'Exportación de datos a Excel o integración con otras herramientas agronómicas'
       ],
       useCases: [
-        'Riego de precisión por sector en frutales y hortícolas.',
-        'Control de salinidad en suelos con riesgo de sodificación.',
-        'Seguimiento del establecimiento de nuevos cultivos y épocas críticas.',
+        'Riego inteligente con reducción de consumo de agua',
+        'Control preciso de fertirrigación evitando exceso de sales y nutrientes',
+        'Monitorización microclimática para prevenir estrés térmico',
+        'Detección temprana de plagas y enfermedades fúngicas mediante condiciones favorables',
+        'Regeneración del suelo y equilibrio microbiológico gracias al seguimiento del potencial REDOX',
+        'Comparativa de zonas o sectores para mejorar la uniformidad del cultivo'
       ],
       workflow: [
-        'Sensórica: sondas de suelo + microclima.',
-        'Gateway ESP32/NBIoT → envío a la nube.',
-        'Normalización y cálculo mediante algoritmos propios en plataforma.',
-        'Panel y alertas: recomendaciones de riego/fertirriego.',
+        'Captura de datos mediante sondas de suelo y sensores microclimáticos',
+        'Transmisión al servidor a través de microcontrolador ESP32 con conectividad GPRS',
+        'Procesamiento mediante algoritmos propios de IA y análisis de patrones',
+        'Visualización y alertas en panel web con recomendaciones automáticas'
       ],
       metrics: [
-        'Ahorro medio de agua: 20–35%.',
-        'Reducción de eventos de estrés hídrico: >40%.',
-        'Menor variabilidad entre sectores: 10–25%.',
+        'Ahorro medio de agua: 25–40%',
+        'Reducción de eventos de estrés hídrico: +40%',
+        'Menor variabilidad entre sectores del cultivo: 15–30%'
       ],
       includes: [
-        'Kit de sensores (configurable).',
-        'Aplicación web para ordenador y móvil.',
-        'Soporte y mantenimiento remoto.',
+        'Kit de sensores personalizable según cultivo y tipo de suelo',
+        'Acceso completo a la plataforma web y móvil',
+        'Soporte técnico y mantenimiento 24/7'
       ],
-      ctaLink: '/signup',
+      ctaLink: '/contacto'
     },
     {
       id: 'agromonitor',
       name: 'AgroMonitor',
       image: 'assets/solutions/agricultura2.jpg',
-      tagline: 'Analítica y predicción de riesgos con IA.',
+      tagline: 'Observación satelital e inteligencia predictiva al servicio de tus cultivos',
       overview:
-        'AgroMonitor combina datos de campo con meteorología y satélite para generar indicadores de riesgo de plagas, enfermedades y estrés hídrico. Emplea modelos de fenología, índices de vegetación (NDVI) y patrones históricos para anticipar intervenciones y priorizar parcelas.',
+        'AgroMonitor combina imágenes satelitales y datos meteorológicos para anticipar riesgos y optimizar la gestión del campo. Genera mapas NDVI, evalúa el vigor vegetativo, detecta zonas de estrés hídrico o térmico y ofrece alertas automáticas con sugerencias de intervención adaptadas a cada cultivo.',
       features: [
-        'Modelos fenológicos y de riesgo según cultivo y patógeno.',
-        'Ingesta de datos meteo (estación propia o red pública) y satélite.',
-        'Mapas de vigor/estrés y priorización de zonas calientes.',
-        'Planificador de tareas con ventanas óptimas de tratamiento.',
-        'Bitácora de actuaciones y comparativa de campañas.',
+        'Integración de datos satelitales y meteorológicos en una misma plataforma',
+        'Cálculo automático de índices de vegetación (NDVI, EVI, NDWI)',
+        'Modelos fenológicos y de riesgo específicos según cultivo',
+        'Mapas interactivos con zonas de manejo diferenciado',
+        'Informes de evolución y comparativas entre campañas'
       ],
       useCases: [
-        'Aviso de condiciones favorables a enfermedades fúngicas según humedad y temperatura.',
-        'Alertas de estrés térmico o riesgo de heladas en cultivos de invernadero',
-        'Seguimiento de crecimiento mediante índice NDVI',
+        'Seguimiento del vigor vegetativo mediante índices de vegetación',
+        'Identificación de zonas de manejo diferenciado para agricultura de precisión',
+        'Detección de sequía o exceso de humedad a nivel de parcela',
+        'Evaluación del impacto real de tratamientos y fertilización',
+        'Alerta temprana ante estrés térmico o déficit hídrico',
+        'Monitoreo continuo de anomalías y generación automática de alertas'
       ],
       workflow: [
-        'Ingesta de datos (meteo y satélite).',
-        'Cálculos de índices y modelos predictivos.',
-        'Generación de alertas y planes sugeridos.',
-        'Seguimiento de resultados y aprendizaje del sistema.',
+        'Integración de datos satelitales y meteorológicos',
+        'Procesamiento mediante modelos de IA y algoritmos predictivos',
+        'Generación de alertas, mapas de riesgo y planes de acción sugeridos',
+        'Seguimiento de la evolución y aprendizaje continuo del sistema'
       ],
       metrics: [
-        'Reducción de tratamientos innecesarios: 10–20%.',
-        'Mejor ajuste de fechas de intervención: +25–40%.',
-        'Disminución de pérdidas por estrés: 10–15%.',
+        'Reducción de tratamientos innecesarios: 15–25%',
+        'Mejor ajuste de fechas de intervención: +30–45%',
+        'Disminución de pérdidas por estrés o plagas: 10–20%'
       ],
       includes: [
-        'Acceso a plataforma avanzada con modelos por cultivo.',
-        'Conectores meteo/satélite y a AgroSense.',
-        'Soporte agronómico para configuración de modelos.',
+        'Acceso a plataforma satelital avanzada con vistas por cultivo y zona',
+        'Interpretación cruzada con datos de AgroSense para mayor precisión',
+        'Soporte técnico remoto y actualizaciones automáticas'
       ],
-      ctaLink: '/signup',
+      ctaLink: '/contacto'
     },
     {
       id: 'agroregen',
       name: 'AgroRegen',
       image: 'assets/solutions/agricultura3.jpg',
-      tagline: 'Gestión regenerativa del suelo, guiada por datos.',
+      tagline: 'IA regenerativa que mide, guía y mejora la vida del suelo',
       overview:
-        'AgroRegen orienta la transición hacia prácticas regenerativas apoyándose en indicadores biogeoquímicos (pH, ORP, Conductividad Eléctrica, Materia Organica, Actividad Microbiana) y en un plan de mejora del suelo. Define objetivos por parcela, propone prácticas (coberturas, compost, biofertilizantes, rotaciones) y verifica avances con mediciones periódicas.',
+        'AgroRegen impulsa la transición hacia una agricultura regenerativa basada en datos. Analiza indicadores biogeoquímicos y diseña un plan personalizado por parcela. Propone prácticas sostenibles y mide la evolución real del suelo a lo largo del tiempo.',
       features: [
-        'Diagnóstico inicial de suelo (químico + biológico) y línea base.',
-        'Plan de prácticas con cronograma y recomendaciones dosificadas.',
-        'Seguimiento con sensores y muestreos de verificación.',
-        'Informe anual de impacto y retorno técnico-económico.',
+        'Diagnóstico inicial del suelo con análiticas microbiológicas',
+        'Plan de manejo regenerativo con objetivos medibles y cronograma',
+        'Seguimiento con sensores, muestreos y análisis de evolución',
+        'Informe anual de impacto técnico, ambiental y económico'
       ],
       useCases: [
-        'Reconversión a manejos con menor insumo sintético.',
-        'Mejora de estructura y retención hídrica en suelos degradados.',
-        'Certificaciones de sostenibilidad y huella de carbono.',
+        'Evaluación integral de la salud del suelo y su tendencia de mejora o degradación',
+        'Recomendaciones regenerativas adaptadas a cada cultivo y contexto',
+        'Optimización biológica del riego y fertilización favoreciendo la microbiología',
+        'Modelos predictivos de recuperación del suelo mediante IA'
       ],
       workflow: [
-        'Diagnóstico y objetivos por cultivo/parcela.',
-        'Ejecución de prácticas (coberturas, bioinsumos, rotaciones).',
-        'Monitoreo de indicadores (sensores + muestreos).',
-        'Ajustes del plan e informe de impacto anual.',
+        'Diagnóstico y establecimiento de objetivos por parcela',
+        'Ejecución de prácticas regenerativas seleccionadas (coberturas, bioinsumos, rotaciones)',
+        'Monitoreo de indicadores y validación del progreso',
+        'Ajustes del plan e informe anual de resultados'
       ],
       metrics: [
-        'Incremento de MO: +0.2–0.6 puntos/año (según contexto).',
-        'Mejora de infiltración y retención: +10–30%.',
-        'Reducción de fertilización sintética: 10–25%.',
+        'Incremento anual de materia orgánica: +0.3–0.6 puntos',
+        'Mejora de infiltración y retención de agua: +15–35%',
+        'Reducción del uso de fertilización sintética: 20–30%'
       ],
       includes: [
-        'Plan técnico personalizado y acompañamiento.',
-        'Cuadro de mando con KPIs regenerativos.',
-        'Sesiones de revisión trimestral.',
+        'Plan técnico personalizado y asesoramiento continuo',
+        'Dashboard con KPIs regenerativos y evolución del suelo',
+        'Revisión trimestral con equipo técnico especializado'
       ],
-      ctaLink: '/signup',
-    },
+      ctaLink: '/contacto'
+    }
   ];
+
+  scrollTo(sectionId: string) {
+    this.viewportScroller.scrollToAnchor(sectionId);
+  }
 }

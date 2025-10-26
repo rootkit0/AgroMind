@@ -69,12 +69,12 @@
   max-width: 100%;
   max-height: 350px;
   object-fit: contain;
-  transform: translateX(25%);
+  transform: translateX(20%);
   transition: transform 0.3s ease;
 }
 
 .sensor-card.reverse .sensor-media img {
-  transform: translateX(25%);
+  transform: translateX(20%);
 }
 
 .sensor-button {

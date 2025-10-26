@@ -4,7 +4,7 @@
 </section>
 
 <nav class="inpage-nav" aria-label="Navegación de secciones">
-  <a *ngFor="let item of nav" [href]="'#' + item.id">{{ item.label }}</a>
+  <a *ngFor="let item of nav" (click)="scrollTo(item.id)">{{ item.label }}</a>
 </nav>
 
 <section *ngFor="let s of solutions" [id]="s.id" class="solution-block">

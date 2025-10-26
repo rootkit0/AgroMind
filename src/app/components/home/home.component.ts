@@ -41,8 +41,8 @@ export class HomeComponent {
     { kit: 'Higrómetro ambiental', contenido: 'Registra la temperatura y la humedad relativa del aire', precio: '359€' },
     { kit: 'Kit básico', contenido: 'Sensor de estrés térmico + Sensor capacitativo', precio: '299€' },
     { kit: 'Kit nutrientes', contenido: 'Sensor de fertirrigación + Sensor NPK', precio: '349€' },
-    { kit: 'Kit Regenerativo', contenido: 'Análisis avanzado de suelo (Auditoría) + AgroRegen IA', precio: '249€ + 15€/mes' },
-    { kit: 'Kit Personalizado', contenido: 'Personalizado', precio: 'A consultar'}
+    { kit: 'Kit regenerativo', contenido: 'Análisis avanzado de suelo (Auditoría) + AgroRegen IA', precio: '249€ + 15€/mes' },
+    { kit: 'Kit personalizado', contenido: 'Personalizado', precio: 'A consultar'}
   ];
 
   displayedColumns = ['kit', 'contenido', 'precio'];
